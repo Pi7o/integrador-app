@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import NewsList from './components/NewsList';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Base from './components/Base';
+import Layout from './components/Layout';
+
+console.log(process.env.REACT_APP_WEATHER_API_KEY)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout/>}>
+          <Route index element = {<Base/>}/>
+          <Route path='resultados' element ={<NewsList/>}/>
+        </Route>
+        <Route path="*" element={<div> 404 </div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

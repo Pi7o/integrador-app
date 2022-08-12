@@ -1,0 +1,14 @@
+.logo-link{
+        display: flex;
+        flex-direction: row;
+        
+        padding: 8px 0;
+        text-decoration: none;
+
+        img {
+            display: block;
+            margin: 8px auto;
+            width: 60px;
+            height: auto;
+        }
+}
